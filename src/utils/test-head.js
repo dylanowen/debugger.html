@@ -29,7 +29,7 @@ function createStore(client: any, initialState: any = {}, sourceMapsMock: any) {
       return {
         ...args,
         client,
-        sourceMaps: sourceMapsMock || sourceMaps
+        sourceMaps: sourceMapsMock === undefined ? sourceMaps : sourceMapsMock
       };
     }
   })(combineReducers(reducers), initialState);
